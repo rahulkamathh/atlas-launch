@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: #FAFAF7;
+  color: #1C1C1E;
+  font-family: 'Inter', system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Selection */
+::selection {
+  background: #A8E6C3;
+  color: #1A7A4A;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #D0D0DA; border-radius: 3px; }
+
+/* Gradient text */
+.text-gradient {
+  background: linear-gradient(135deg, #1A7A4A 0%, #2ECC71 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-dark {
+  background: linear-gradient(160deg, #1C1C1E 0%, #1A7A4A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Section */
+.section-py {
+  padding-top: clamp(80px, 10vw, 144px);
+  padding-bottom: clamp(80px, 10vw, 144px);
+}
+
+.container-atlas {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 5vw, 72px);
+}
+
+/* Card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(228, 228, 234, 0.8);
+  border-radius: 20px;
+}
+
+/* Subtle grid background */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(228,228,234,0.4) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(228,228,234,0.4) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+/* Radial fade mask for grid */
+.grid-fade {
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 40%, transparent 100%);
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 40%, transparent 100%);
+}
+
+/* Animated dashes for flow lines */
+@keyframes dash {
+  to { stroke-dashoffset: -100; }
+}
+
+.animate-dash {
+  animation: dash 2s linear infinite;
+}
+
+/* Focus */
+:focus-visible {
+  outline: 2px solid #1A7A4A;
+  outline-offset: 2px;
+  border-radius: 6px;
+}
